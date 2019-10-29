@@ -1,0 +1,13 @@
+plugins/
+target/
+.idea/
+*.iml
+auth-service.log
+.classpath
+.project
+.settings/
+.DS_Store
+mvnw.cmd
+mvnw
+HELP.md
+.mvn

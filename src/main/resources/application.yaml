@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: development
+  jpa:
+    properties:
+      hibernate:
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+#------------------------------------------------------------------------------------------------------
+# development profile
+#------------------------------------------------------------------------------------------------------
+---
+spring:
+  profiles: development
+  datasource:
+    url: jdbc:mysql://<url>/<dbname>
+    username: <username>
+    password: <password>
+    type: org.apache.tomcat.jdbc.pool.DataSource
+    tomcat:
+      max-active: 5
+      max-idle: 3
+      min-idle: 2
+      max-wait: 3000
+      initialSize: 3
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
